@@ -1,0 +1,110 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.app {
+  --clock-size: 3vw;
+  --gap: calc(var(--clock-size) * 0.05);
+  --clock-segment-w: calc(var(--clock-size) * 4 + var(--gap) * 5);
+  --clock-segment-h: calc(var(--clock-size) * 6 + var(--gap) * 5);
+  text-align: center;
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-left: calc(var(--clock-size) + var(--gap) * 2);
+}
+
+.app > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  width: var(--clock-segment-w);
+  height: var(--clock-segment-h);
+}
+
+.app > div:nth-of-type(even) {
+  margin-right: var(--clock-size);
+}
+
+.clock {
+  --w: 47%;
+  --h: 3px;
+  --dur: 0.4s;
+  position: relative;
+  width: var(--clock-size);
+  height: var(--clock-size);
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--clock-border);
+  background: linear-gradient(225deg, var(--clock-gradient-start) 10%, var(--clock-gradient-end));
+  box-shadow: -2px 2px 6px var(--shadow-dark),
+               2px -2px 6px var(--shadow-light);
+  transition: all 0.5s;
+}
+
+.clock::before,
+.clock::after {
+  position: absolute;
+  content: '';
+  top: calc(50% - var(--h) * 0.5);
+  left: 50%;
+  transform-origin: 0% 50%;
+  width: var(--w);
+  height: var(--h);
+  background: var(--hand-color);
+  border-radius: 9999px;
+  transition: all 0.5s;
+  transform: rotate(calc(var(--angle) * 1deg));
+  box-shadow: 0 0 5px var(--hand-glow), 0 0 10px var(--hand-glow), 0 0 15px var(--hand-glow);
+}
+
+.clock::before { --angle: var(--hour-angle); }
+.clock::after { --angle: var(--minute-angle); }
+
+@media (max-width: 700px) {
+  .clock { --h: 2px; border: 1px solid var(--clock-border); }
+}
+
+@media (max-width: 500px) {
+  .clock { --h: 1px; --w: 50%; }
+}
+
+/* Dark theme (default) */
+body {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --clock-border: #555555;
+  --clock-gradient-start: #1e1e1e;
+  --clock-gradient-end: #2a2a2a;
+  --hand-color: #ffffff;
+  --hand-glow: #ffffff;
+  --shadow-light: #333333;
+  --shadow-dark: #0d0d0d;
+}
+
+/* Light theme override */
+body.light-theme {
+  --bg-color: #f8f8f8;
+  --text-color: #1a1a1a;
+  --clock-border: #cccccc;
+  --clock-gradient-start: #ffffff;
+  --clock-gradient-end: #e6e6e6;
+  --hand-color: #1a1a1a;
+  --hand-glow: #1a1a1a;
+  --shadow-light: #f0f0f0;
+  --shadow-dark: #d0d0d0;
+}
