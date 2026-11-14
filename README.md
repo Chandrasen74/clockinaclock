@@ -1,26 +1,45 @@
-# Clock made of clocks
+# clockinaclock
+
+**Live demo:** https://chandrasen74.github.io/clockinaclock/  
+**Repository:** https://github.com/Chandrasen74/clockinaclock
+
+![Screenshot of clockinaclock](screenshot.png)
 
 ## Overview
-**clockinaclock** is a JavaScript, HTML, CSS project with a browser-viewable demo (GitHub Pages).
+`clockinaclock` is a HTML/CSS/JavaScript project.
+- **Primary language:** JavaScript
+- **Languages detected:** HTML, JavaScript, CSS
+- **Stack/tech:** HTML, CSS, JavaScript
+- **Entry point:** `index.html`
+- **Key files:** `index.html`
 
-- Primary language: **JavaScript**
-- Detected stack: JavaScript, HTML, CSS
-- HTML title: Clock made of clocks
+## Language & stack details
+- Languages: HTML, JavaScript, CSS
+- Frameworks/tools/libraries: HTML, CSS, JavaScript
 
-**Live/demo:** https://chandrasen74.github.io/clockinaclock/
+## How to install & run
+### Prerequisites
+- A modern web browser
+- (Optional) [Python 3](https://www.python.org/) or any static file server for local serving
 
-## Repository contents
-- `index.html`
-- `script.js`
-- `style.css`
-
-## Getting started
+### Run locally
 ```bash
 git clone https://github.com/Chandrasen74/clockinaclock.git
 cd clockinaclock
-# open index.html in a browser, or serve locally:
+```
+- **Option 1:** open `index.html` directly in your browser
+- **Option 2:** serve locally (recommended for some JS features):
+```bash
 python -m http.server 8000
+# then open http://localhost:8000
 ```
 
+## Repository structure (top-level/sample)
+- `README.md`
+- `index.html`
+- `screenshot.png`
+- `script.js`
+- `style.css`
+
 ## Status
-README generated/updated as part of a profile-wide documentation pass based on repository contents.
+Documented with screenshot, language/stack details, and setup instructions as part of a profile-wide README update.
