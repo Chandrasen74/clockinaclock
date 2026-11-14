@@ -6,12 +6,19 @@
 ![Screenshot of clockinaclock](screenshot.png)
 
 ## Overview
-`clockinaclock` is a HTML/CSS/JavaScript project.
+`clockinaclock` is a creative "clock made of clocks" time visualization. It renders the current time using a grid of analog clocks whose hands form each digit.
+
 - **Primary language:** JavaScript
 - **Languages detected:** HTML, JavaScript, CSS
-- **Stack/tech:** HTML, CSS, JavaScript
+- **Stack/tech:** React (loaded via ESM), HTML, CSS, JavaScript
 - **Entry point:** `index.html`
-- **Key files:** `index.html`
+
+## Controls (keyboard shortcuts)
+| Key | Action |
+| --- | --- |
+| `1` | Toggle 12-hour / 24-hour time format |
+| `2` | Spin animation (randomizes clock hands briefly) |
+| `3` | Toggle dark / light theme |
 
 ## Language & stack details
 - Languages: HTML, JavaScript, CSS
@@ -42,4 +49,4 @@ python -m http.server 8000
 - `style.css`
 
 ## Status
-Documented with screenshot, language/stack details, and setup instructions as part of a profile-wide README update.
+Documented with screenshot, language/stack details, setup instructions, and keyboard shortcuts.
